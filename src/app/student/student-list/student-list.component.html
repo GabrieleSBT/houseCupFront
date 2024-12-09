@@ -1,7 +1,7 @@
 <div id="studentContainer">
     @for (student of studentDetails; track $index) {
         @if(student.course=='JAITA130'){
-            <app-student-detail (chooseStudentEvent)="onStudentSelected($event)" [detail]="student">
+            <app-student-detail  [detail]="student">
 
         </app-student-detail>}
 

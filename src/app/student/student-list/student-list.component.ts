@@ -16,11 +16,10 @@ export class StudentListComponent implements OnInit {
   constructor(private studentService: StudentService) {
  }
   ngOnInit(): void{
-    this.studentDetails = this.studentService.getStudentDetails();
+     this.studentService.getStudentDetails().subscribe(sl => {
+      console.log(sl);
+      this.studentDetails = sl;
+     });
  }
-  onStudentSelected(student: StudentDetail){
-    console.log(student);
-
-  }
-
+  
 }

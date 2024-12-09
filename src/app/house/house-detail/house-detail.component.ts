@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ScoreComponent } from '../score/score.component';
 import { ScoreDetail } from '../../model/score-detail';
+import { ScoreService } from '../../model/score-service';
 
 @Component({
   selector: 'app-house-detail',
@@ -9,8 +10,10 @@ import { ScoreDetail } from '../../model/score-detail';
   templateUrl: './house-detail.component.html',
   styleUrl: './house-detail.component.css'
 })
-export class HouseDetailComponent {
+export class HouseDetailComponent{
+  houseDetails!: ScoreDetail[];
 
+  
   @Input({
     required:true
   })

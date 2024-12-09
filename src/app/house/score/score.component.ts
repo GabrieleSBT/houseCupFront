@@ -11,12 +11,14 @@ import { ScoreService } from '../../model/score-service';
   styleUrl: './score.component.css'
 })
 export class ScoreComponent implements OnInit{
-  scoreDetails!: ScoreDetail[];
-  constructor(private scoreService: ScoreService){
-
+  houseDetails!: ScoreDetail[];
+  constructor(private scoreSerice: ScoreService) {
   }
   ngOnInit(): void {
-    this.scoreDetails= this.scoreService.getScoreDetails();
+      this.scoreSerice.getScoreDetails().subscribe(sl => {
+        console.log(sl);
+        this.houseDetails = sl;
+      });
   }
 
 

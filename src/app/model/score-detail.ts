@@ -1,7 +1,5 @@
 export interface ScoreDetail{
     id:number;
-    nomeCasa: string;
-    punteggioTotale:number;
-
-
+    name: string;
+    score:number;
 }
