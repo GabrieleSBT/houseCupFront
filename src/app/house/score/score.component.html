@@ -1,8 +1,13 @@
 <div id="scoreContainer">
-    @for (house of houseDetails; track $index) {
+    @for (house of houseDetails.rankings; track $index) {
 
         <app-house-detail  [detail]="house">
          </app-house-detail>
     }
 
+</div>
+<div>
+    <h1>Winner</h1>
+    <app-house-detail [detail]="houseDetails.winner">
+    </app-house-detail>
 </div>

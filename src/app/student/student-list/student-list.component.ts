@@ -4,6 +4,7 @@ import { StudentService } from '../../model/student-service';
 import { log } from 'console';
 import { RouterModule } from '@angular/router';
 import { StudentDetailComponent } from '../student-detail/student-detail.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-student-list',
@@ -16,10 +17,12 @@ export class StudentListComponent implements OnInit {
   constructor(private studentService: StudentService) {
  }
   ngOnInit(): void{
-     this.studentService.getStudentDetails().subscribe(sl => {
-      console.log(sl);
-      this.studentDetails = sl;
-     });
+    let osd: Observable<StudentDetail[]> = this.studentService.getStudentDetails();
+    osd.subscribe({
+      next: sts => this.studentDetails = sts,
+      error: er => console.log(er)
+    })
+    ;
  }
   
 }

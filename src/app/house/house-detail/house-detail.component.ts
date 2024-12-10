@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ScoreComponent } from '../score/score.component';
-import { ScoreDetail } from '../../model/score-detail';
+import { HouseDto } from '../../model/house-dto';
 import { ScoreService } from '../../model/score-service';
 
 @Component({
@@ -11,13 +11,13 @@ import { ScoreService } from '../../model/score-service';
   styleUrl: './house-detail.component.css'
 })
 export class HouseDetailComponent{
-  houseDetails!: ScoreDetail[];
+  houseDetails!: HouseDto[];
 
   
   @Input({
     required:true
   })
-  detail:ScoreDetail | null = null;
+  detail:HouseDto | null = null;
 
 
 }

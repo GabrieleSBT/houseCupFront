@@ -2,7 +2,7 @@ import { Component,EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { StudentDetail } from '../../model/student-detail';
 
 import { RouterModule } from '@angular/router';
-import { ScoreDetail } from '../../model/score-detail';
+import { HouseDto } from '../../model/house-dto';
 import { ScoreService } from '../../model/score-service';
 
 

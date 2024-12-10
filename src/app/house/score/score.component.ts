@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HouseDetailComponent } from '../house-detail/house-detail.component';
-import { ScoreDetail } from '../../model/score-detail';
+import { HouseDto } from '../../model/house-dto';
 import { ScoreService } from '../../model/score-service';
+import { HouseRankingDto } from '../../model/house-ranking-dto';
 
 @Component({
   selector: 'app-score',
@@ -11,7 +12,7 @@ import { ScoreService } from '../../model/score-service';
   styleUrl: './score.component.css'
 })
 export class ScoreComponent implements OnInit{
-  houseDetails!: ScoreDetail[];
+  houseDetails!: HouseRankingDto;
   constructor(private scoreSerice: ScoreService) {
   }
   ngOnInit(): void {

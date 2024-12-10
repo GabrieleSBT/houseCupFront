@@ -1,5 +1,6 @@
-export interface ScoreDetail{
+export interface HouseDto{
     id:number;
     name: string;
     score:number;
+    houseImage:string;
 }
